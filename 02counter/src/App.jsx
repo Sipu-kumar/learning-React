@@ -14,8 +14,15 @@ function App() {
   const addValue =()=>{
     // console.log("added  value",Math.random());
     console.log("clicked", counter);
-    counter = counter + 1;
-    setCounter(counter);// ye hi sahi tarika hai state ki value update karne ka
+    // counter = counter + 1;
+    // setCounter(counter);// ye hi sahi tarika hai state ki value update karne ka
+    // setCounter(counter +1);
+    // setCounter(counter +1);// ye galat tarika hai multiple updates karne ka
+    // setCounter(counter +1); // React batches the state updates for performance optimization. so finally counter will be increased by 1 only...not 4
+    setCounter((prevCounter)=> prevCounter +1);// ye sahi tarika hai  multiple updates karne ka
+    setCounter((prevCounter)=> prevCounter +1);
+    setCounter((prevCounter)=> prevCounter +1);
+    setCounter((prevCounter)=> prevCounter +1); // prevoius counter ka value access krega and increment krega using callback function...
   };
   const subtract =()=>{
     console.log("subtract clicked", counter);
